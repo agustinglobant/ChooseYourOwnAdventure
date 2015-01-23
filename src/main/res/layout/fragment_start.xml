@@ -1,7 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.mobilemakers.chooseyourownadventure.StartFragment">
+    tools:context="co.mobilemakers.chooseyourownadventure.StartFragment"
+    android:background="#ff000000">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -11,5 +12,14 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/welcome_message"
         android:id="@+id/welcom_message"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_start_traveling"
+        android:id="@+id/button_start_traveling"
+        android:layout_gravity="center" />
+
 </FrameLayout>
