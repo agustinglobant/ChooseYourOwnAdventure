@@ -22,12 +22,14 @@ public class ChanceToARandomScreen implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         if (mChance.nextInt(65000) % 2 == 0) {
             //alley
-            Intent intent = new Intent(mSourceActivity, AlleyActivity.class);
+            intent = new Intent(mSourceActivity.getApplicationContext(), AlleyActivity.class);
         } else {
             //room
-            Intent intent = new Intent(mSourceActivity, RoomActivity.class);
+            intent = new Intent(mSourceActivity.getApplicationContext(), RoomActivity.class);
         }
+        mSourceActivity.startActivity(intent);
     }
 }

@@ -5,11 +5,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class StartFragment extends Fragment {
 
+    Button mButtonStartTraveling;
     public StartFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mButtonStartTraveling = (Button) getView().findViewById(R.id.button_start_traveling);
+        mButtonStartTraveling.setOnClickListener(new ChanceToARandomScreen(getActivity()));
     }
 
     @Override
