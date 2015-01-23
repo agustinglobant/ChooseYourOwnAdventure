@@ -7,5 +7,9 @@
     <string name="welcome_message">Welcome Adventurer!</string>
     <string name="button_start_traveling">Start traveling</string>
     <string name="text_title_alley">ALLEY</string>
+    <string name="text_question">You have ventured down a dark alley, where would you like to go next?</string>
+    <string name="button_go_left">Go Left</string>
+    <string name="button_go_right">Go Right</string>
+    <string name="button_continue">Continue</string>
 
 </resources>

@@ -15,4 +15,44 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#FFFFFF"
         android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_question"
+        android:id="@+id/text_question"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_go_left"
+            android:id="@+id/button_go_left"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_continue"
+            android:id="@+id/button_continue"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_go_right"
+            android:id="@+id/button_go_right"
+            android:layout_weight="1" />
+    </LinearLayout>
 </FrameLayout>
