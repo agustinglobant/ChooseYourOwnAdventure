@@ -13,5 +13,7 @@
     <string name="button_continue">Continue</string>
     <string name="text_title_room">Room</string>
     <string name="text_room_meesage">You have entered a room with two doors</string>
+    <string name="button_door_one">Enter Door 1</string>
+    <string name="button_door_two">Enter door 2</string>
 
 </resources>
