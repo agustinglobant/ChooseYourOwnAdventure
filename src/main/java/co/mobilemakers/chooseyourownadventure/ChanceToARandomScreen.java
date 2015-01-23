@@ -1,11 +1,9 @@
 package co.mobilemakers.chooseyourownadventure;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import java.util.Random;
-import android.view.ViewGroup;
 
 
 /**
@@ -15,20 +13,32 @@ public class ChanceToARandomScreen implements View.OnClickListener {
 
     Random mChance = new Random();
     Context mSourceActivity;
+    int mWinningChance;
 
-    public ChanceToARandomScreen(Context context){
+    public ChanceToARandomScreen(Context context, int winning_chance){
         mSourceActivity = context;
+        mWinningChance = winning_chance;
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent;
-        if (mChance.nextInt(65000) % 2 == 0) {
-            //alley
-            intent = new Intent(mSourceActivity.getApplicationContext(), AlleyActivity.class);
-        } else {
-            //room
-            intent = new Intent(mSourceActivity.getApplicationContext(), RoomActivity.class);
+        Intent intent = null;
+        switch (mChance.nextInt(4)){
+            case 0:
+                intent = new Intent(mSourceActivity.getApplicationContext(), AlleyActivity.class);
+                break;
+            case 1:
+                intent = new Intent(mSourceActivity.getApplicationContext(), RoomActivity.class);
+                break;
+            case 2:
+                intent = new Intent(mSourceActivity.getApplicationContext(), ResultActivity.class);
+                intent.putExtra("win_or_lose", mChance.nextInt(9));
+                break;
+            case 3:
+                intent = new Intent(mSourceActivity.getApplicationContext(), ResultActivity.class);
+                intent.putExtra("win_or_lose", mChance.nextInt(9));
+                break;
+
         }
         mSourceActivity.startActivity(intent);
     }

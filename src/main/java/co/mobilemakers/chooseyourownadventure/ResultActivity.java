@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class ResultActivity extends ActionBarActivity {
@@ -12,6 +13,13 @@ public class ResultActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        TextView mTextView = (TextView) findViewById(R.id.result_message);
+        int winOrLose = getIntent().getIntExtra("win_or_lose", 0);
+        if (winOrLose >= 5) {
+            mTextView.setText("You’ve reached the gold!");
+        } else {
+            mTextView.setText("You’ve fallen into the pit of despair");
+        }
     }
 
 

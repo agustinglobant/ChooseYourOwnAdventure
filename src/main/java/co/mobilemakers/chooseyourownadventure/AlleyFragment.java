@@ -24,9 +24,9 @@ public class AlleyFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         getWidgets();
-        mButtonGoRight.setOnClickListener(new ChanceToARandomScreen(getActivity()));
-        mButtonGoLeft.setOnClickListener(new ChanceToARandomScreen(getActivity()));
-        mButtonContinue.setOnClickListener(new ChanceToARandomScreen(getActivity()));
+        mButtonGoRight.setOnClickListener(new ChanceToARandomScreen(getActivity(),8));
+        mButtonGoLeft.setOnClickListener(new ChanceToARandomScreen(getActivity(),5));
+        mButtonContinue.setOnClickListener(new ChanceToARandomScreen(getActivity(),3));
     }
 
     private void getWidgets() {
