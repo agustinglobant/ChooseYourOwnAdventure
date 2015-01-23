@@ -15,5 +15,9 @@
     <string name="text_room_meesage">You have entered a room with two doors</string>
     <string name="button_door_one">Enter Door 1</string>
     <string name="button_door_two">Enter door 2</string>
+    <string name="title_activity_alley">AlleyActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_room">RoomActivity</string>
+    <string name="title_activity_result">ResultActivity</string>
 
 </resources>
