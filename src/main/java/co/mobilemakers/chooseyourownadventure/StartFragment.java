@@ -18,7 +18,7 @@ public class StartFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mButtonStartTraveling = (Button) getView().findViewById(R.id.button_start_traveling);
-        mButtonStartTraveling.setOnClickListener(new ChanceToARandomScreen(getActivity(),5));
+        mButtonStartTraveling.setOnClickListener(new ChanceToARandomScreen(getFragmentManager()));
     }
 
     @Override

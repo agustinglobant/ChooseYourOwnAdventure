@@ -1,45 +1,47 @@
 package co.mobilemakers.chooseyourownadventure;
 
-import android.content.Context;
-import android.content.Intent;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.os.Bundle;
 import android.view.View;
+
 import java.util.Random;
 
-
 /**
- * Created by agustin.gugliotta on 23/01/2015.
+ * Created by agustin.gugliotta on 29/01/2015.
  */
 public class ChanceToARandomScreen implements View.OnClickListener {
 
     Random mChance = new Random();
-    Context mSourceActivity;
-    int mWinningChance;
+    FragmentManager fragmentManager;
 
-    public ChanceToARandomScreen(Context context, int winning_chance){
-        mSourceActivity = context;
-        mWinningChance = winning_chance;
+
+    public ChanceToARandomScreen(FragmentManager fragmentManager){
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = null;
+        Fragment random_fragment = null;
+        Bundle bundle = new Bundle();
         switch (mChance.nextInt(4)){
             case 0:
-                intent = new Intent(mSourceActivity.getApplicationContext(), AlleyActivity.class);
+                random_fragment = new AlleyFragment();
                 break;
             case 1:
-                intent = new Intent(mSourceActivity.getApplicationContext(), RoomActivity.class);
+                random_fragment = new RoomFragment();
                 break;
             case 2:
-                intent = new Intent(mSourceActivity.getApplicationContext(), ResultActivity.class);
-                intent.putExtra("win_or_lose", mChance.nextInt(9));
+                random_fragment = new ResultFragment();
+                bundle.putInt("win_or_lose",mChance.nextInt(9));
+                random_fragment.setArguments(bundle);
                 break;
             case 3:
-                intent = new Intent(mSourceActivity.getApplicationContext(), ResultActivity.class);
-                intent.putExtra("win_or_lose", mChance.nextInt(9));
+                random_fragment = new ResultFragment();
+                bundle.putInt("win_or_lose",mChance.nextInt(9));
+                random_fragment.setArguments(bundle);
                 break;
-
         }
-        mSourceActivity.startActivity(intent);
+        fragmentManager.beginTransaction().replace(R.id.main_layout, random_fragment).commit();
     }
 }

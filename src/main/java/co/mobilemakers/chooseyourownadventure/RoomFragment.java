@@ -23,8 +23,8 @@ public class RoomFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         getWidgets();
-        mButtonDoorOne.setOnClickListener(new ChanceToARandomScreen(getActivity(),7));
-        mButtonDoorTwo.setOnClickListener(new ChanceToARandomScreen(getActivity(),2));
+        mButtonDoorOne.setOnClickListener(new ChanceToARandomScreen(getFragmentManager()));
+        mButtonDoorTwo.setOnClickListener(new ChanceToARandomScreen(getFragmentManager()));
 
     }
 

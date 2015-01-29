@@ -1,9 +1,15 @@
 package co.mobilemakers.chooseyourownadventure;
 
+import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.util.Random;
 
 
 public class FragmentContainerActivity extends ActionBarActivity {
@@ -12,6 +18,11 @@ public class FragmentContainerActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_container);
+
+        if (savedInstanceState == null){
+            StartFragment startFragment = new StartFragment();
+            getFragmentManager().beginTransaction().add(R.id.main_layout, startFragment).commit();
+        }
     }
 
 
