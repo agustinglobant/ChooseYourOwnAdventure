@@ -1,5 +1,6 @@
 package co.mobilemakers.chooseyourownadventure;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +13,7 @@ import android.view.View;
 import java.util.Random;
 
 
-public class FragmentContainerActivity extends ActionBarActivity {
+public class FragmentContainerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

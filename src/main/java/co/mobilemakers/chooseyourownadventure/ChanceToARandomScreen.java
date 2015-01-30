@@ -42,6 +42,6 @@ public class ChanceToARandomScreen implements View.OnClickListener {
                 random_fragment.setArguments(bundle);
                 break;
         }
-        fragmentManager.beginTransaction().replace(R.id.main_layout, random_fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.main_layout, random_fragment).addToBackStack(null).commit();
     }
 }
