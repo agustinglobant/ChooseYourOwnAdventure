@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,11 +20,18 @@ public class FragmentContainerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_container);
+        actionBarCustomization();
 
         if (savedInstanceState == null){
             StartFragment startFragment = new StartFragment();
             getFragmentManager().beginTransaction().add(R.id.main_layout, startFragment).commit();
         }
+    }
+
+    private void actionBarCustomization() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(R.string.action_bar_title);
+        actionBar.setDisplayShowHomeEnabled(true);
     }
 
 
@@ -41,9 +49,11 @@ public class FragmentContainerActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_settings:
+                Intent intent = new Intent(this, AppSettingsActivity.class);
+                startActivity(intent);
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
