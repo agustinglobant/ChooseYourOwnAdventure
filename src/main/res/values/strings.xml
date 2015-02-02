@@ -19,5 +19,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_room">RoomActivity</string>
     <string name="title_activity_result">ResultActivity</string>
-
+    <string name="pref_category_customization">Customization</string>
+    <string name="pref_username_title">Your name</string>
+    <string name="pref_username_summary">Personalize your message with your name.</string>
+    <string name="pref_difficulty_level">Difficulty</string>
+    <string name="pref_difficulty_summary">Difficulty of the current game.</string>
+    <string name="action_bar_title">C.Y.O.A.</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="default_username">my friend</string>
 </resources>

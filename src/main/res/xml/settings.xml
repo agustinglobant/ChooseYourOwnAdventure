@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_category_customization">
+        <EditTextPreference
+            android:key="username_preference"
+            android:title="@string/pref_username_title"
+            android:summary="@string/pref_username_summary"/>
+        <ListPreference
+            android:key="difficulty_preference"
+            android:title="@string/pref_difficulty_level"
+            android:summary="@string/pref_difficulty_summary"
+            android:entries="@array/difficulty_options"
+            android:entryValues="@array/difficulty_values" />
+    </PreferenceCategory>
+</PreferenceScreen>
